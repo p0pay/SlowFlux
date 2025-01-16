@@ -1,0 +1,12 @@
+npm install
+
+cd ml_service
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+uvicorn main:app --reload
+
+cd ..
+npx tsc scripts/init-db.ts
+npx ts-node scripts/init-db.js
+npm run dev
